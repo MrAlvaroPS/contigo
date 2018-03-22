@@ -1,0 +1,28 @@
+<app-head-bar></app-head-bar>
+
+
+<div class="bgImageWed">
+
+
+  <div class="giftSearch">
+    <input type="text" name="giftSearch" placeholder="Busca un regalo" [(ngModel)]="pattern">
+  </div>
+
+
+
+  <div class="fullGiftContainer">
+    <div class="giftsCointainer" *ngFor="let gift of gifts | filter:'name':pattern; let i = index">
+      <div class="giftTitle">
+        <h2> {{gift.name}} </h2>
+      </div>
+      <div>
+        <img class="imgWed" [src]=gift.image> </div>
+      <div class="wedGiftFoot">
+        <div>
+          <strong>Price: </strong>{{gift.price}}</div>
+        <button>Participar</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.navHead {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    padding: 20px 0 30px;
+    font-family: "Justus Capitals","Georgia","Bitstream Charter","Century Schoolbook L","Liberation Serif","Times",serif;    // border-bottom: 1px solid burlywood;
+
+    .navElem {
+        align-items: center;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        // background-image: url('http://www.textures4photoshop.com/tex/thumbs/old-rustic-wood-free-texture-109.jpg');
+        // background-color: whitesmoke;
+        width: 180px;
+        height: 50px;
+        padding-right: 30px;
+        a{
+            text-decoration: none;
+            color: #b81600;
+        }
+    }
+}

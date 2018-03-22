@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'wedFont';
+  src: url('./../../../others/fonts/FREEBSC_.ttf') format('truetype');
+}
+
+.bgImage {
+  background-image: url('http://images.glaciermedia.ca/polopoly_fs/1.2190212.1457064248!/fileImage/httpImage/image.jpg_gen/derivatives/original_size/rustic-roses.jpg'); // background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+}
+
+.inputIndexForm {
+    background-color: transparent;
+    position: absolute;
+    opacity: 0;
+    right: 11%;
+    width: 530px;
+    height: 50px;
+    top: 55%;
+    display: flex;
+    justify-content: space-between;
+    .codeInput {
+        border-radius: 20px; 
+        background-color: rgba(255, 250, 240, 0.3);
+        width: 30%;
+        height: 30px;
+        text-align: center;
+        border: none;
+        .indexInput {
+            border-radius: 20px; 
+            background-color: rgba(255, 250, 240, 0.5);
+            width: 100%;
+            height: 28px;
+            text-align: center;
+            border: none;
+            outline: none;
+        }
+    }
+    .btnIndexReg {
+        border-radius: 20px; 
+        width: 25%;
+        height: 30px;
+        text-align: center;
+        border: none;
+        .btnReg {
+            background-color: rgba(255, 250, 240, 0.6);
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            -webkit-box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
+            -moz-box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
+            box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
+        }
+        .btnLog {
+            background-color: rgb(245, 245, 245);
+            height: 100%;
+            width: 100%;
+            border-radius: 20px;
+            border: none;
+        }
+    }
+}
+
+
+.titleContainer {
+  /* display: inline-flex; */
+  align-items: right;
+  justify-content: right;
+  align-content: right;
+  align-self: right;
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  .indexTitle {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    align-content: right;
+    align-self: right;
+    font-size: 52px;
+    color: white;
+  }
+}
+
+.containerIndex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0px 500px 0px 50px;
+  &_left {
+    text-align: left;
+  }
+  &_right {
+    text-align: right;
+  }
+}
+
+.loginIndexForm {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  top: 15%;
+  right: 7%;
+  width: 150px;
+  flex-direction: column;
+  min-height: 150px;
+  justify-content: space-evenly; // background-color: rgba(255,255,255,0.4);
+  background-image: url('http://pngimg.com/uploads/sticky_note/sticky_note_PNG18934.png');
+  background-size: cover;
+  padding: 35px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  .protaCode {
+    width: 100%;
+  }
+  .codeString {
+    font-size: 36px;
+    color: purple;
+  }
+  .bgImageInput {}
+}

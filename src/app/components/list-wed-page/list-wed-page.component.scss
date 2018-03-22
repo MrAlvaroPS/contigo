@@ -1,0 +1,62 @@
+.bgImageWed {
+    padding: 0 30px;
+    // background-image: url('https://wallpapertag.com/wallpaper/full/4/9/6/218672-beautiful-vintage-rustic-wood-background-3006x1727-for-windows.jpg');
+    // background-repeat: repeat-y;
+    // background-size: cover;
+    .giftSearch {
+        padding: 20px 40px 40px;
+        input {
+            background-color: rgba(255, 250, 240, 0.6);
+            height: 30px;
+            width: 160px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            -webkit-box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
+            -moz-box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
+            box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
+        }
+    
+    }
+    .fullGiftContainer {
+      display: flex;
+      flex-wrap: wrap;
+      
+      .giftsCointainer {
+        border: 1px solid papayawhip;
+        background-color: rgba(255, 250, 240, 1);
+        display: flex;
+        flex-direction: column;
+        margin: 15px 10px;
+        -webkit-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+        box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+        justify-content: space-between;
+        .imgWed {
+            max-width: 400px;
+            max-height: 200px;
+          }
+      }
+      .giftsCointainer:nth-child(2n+1) {
+        border: 1px solid papayawhip;
+        background-color: rgba(255, 250, 240, 1);
+        display: flex;
+        flex-direction: column;
+        margin: 5px 10px;
+        -webkit-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+        box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+        justify-content: space-between;
+          .imgWed {
+            max-width: 300px;
+            max-height: 150px;
+          }
+      }
+      .wedGiftFoot {
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    
+}
