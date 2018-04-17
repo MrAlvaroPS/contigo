@@ -1,0 +1,19 @@
+
+<div class="guestList">
+    <input class="addInput" type="text" #user id="userInput" placeholder="User Name">
+    <button class="addBtnSubmit" (click)="add(user.value)"> Añadir un invitado </button>
+    
+    <div class="guestSearch">
+        <input type="text" name="guestSearch" placeholder="Busca un invitado" [(ngModel)]="pattern">
+      </div>
+    
+  <ul class="conList" *ngFor="let user of users | filter:'user':pattern; let i = index">
+    <div class="listElemContainer">
+      <li class="list">
+
+          {{ user.Name | json }}
+         
+      </li>
+    </div>
+  </ul>
+</div>

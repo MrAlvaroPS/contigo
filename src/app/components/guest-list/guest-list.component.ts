@@ -5,27 +5,35 @@ import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, Router } from '@angular/router';
-import { gifts } from '../../gifts';
 
 @Component({
-  selector: 'app-list-wed-page',
-  templateUrl: './list-wed-page.component.html',
-  styleUrls: ['./list-wed-page.component.scss'],
+  selector: 'app-guest-list',
+  templateUrl: './guest-list.component.html',
+  styleUrls: ['./guest-list.component.scss'],
   providers: [AngularFireDatabase]
 })
-export class ListWedPageComponent implements OnInit {
-  gifts: Object[];
-
+export class GuestListComponent implements OnInit {
+  users: Object[];
   constructor(
     private af: AngularFireDatabase,
     private routes: ActivatedRoute,
-    private router: Router) {
-      af.list('gifts').valueChanges().subscribe(
-        gifts => {
-          this.gifts = gifts;
-        }
-      );
-    }
+    private router: Router
+  ) {
+    af.list('users').valueChanges().subscribe(
+      users => {
+        this.users = users;
+      }
+    );
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
+  add(user) {
+    console.log('añadiendo');
+    firebase.database().ref('users/').push({
+      Name: user
+    });
+    this.users.push(user);
+  }
+
 }

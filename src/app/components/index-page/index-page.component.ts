@@ -23,7 +23,7 @@ export class IndexPageComponent implements OnInit {
 
   goReg() {
     console.log('navigando');
-    this.router.navigate(['/intro']);
+    this.router.navigate(['/wedPage/intro']);
   }
 
   //// evento de raton
