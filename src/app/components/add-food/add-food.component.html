@@ -1,0 +1,47 @@
+<form #addFoodFirstForm>
+  <div>
+    <input type="text" name="addFood" #firstPlate1 placeholder="Primer Plato">
+    <input type="text" name="addFood" #firstPlate2 placeholder="Primer Plato">
+    <input type="text" name="addFood" #firstPlate3 placeholder="Primer Plato">
+
+
+    <button type="submit" (click)="addFoodFirst(firstPlate1.value, firstPlate2.value, firstPlate3.value); addFoodFirstForm.reset()">
+    Añadir! </button>
+  </div>
+</form>
+
+<form #addFoodSecondForm>
+  <div>
+    <input type="text" name="addFood" #firstPlate1 placeholder="Segundo Plato">
+    <input type="text" name="addFood" #firstPlate2 placeholder="Segundo Plato">
+    <input type="text" name="addFood" #firstPlate3 placeholder="Segundo Plato">
+
+
+    <button type="submit" (click)="addFoodSec(firstPlate1.value, firstPlate2.value, firstPlate3.value); addFoodSecondForm.reset()">
+    Añadir! </button>
+  </div>
+</form>
+
+<form #addFoodThirdForm>
+  <div>
+    <input type="text" name="addFood" #firstPlate1 placeholder="Tercero Plato">
+    <input type="text" name="addFood" #firstPlate2 placeholder="Tercero Plato">
+    <input type="text" name="addFood" #firstPlate3 placeholder="Tercero Plato">
+
+
+    <button type="submit" (click)="addFoodThird(firstPlate1.value, firstPlate2.value, firstPlate3.value); addFoodThirdForm.reset()">
+    Añadir! </button>
+  </div>
+</form>
+
+<form #addFoodDesForm>
+  <div>
+    <input type="text" name="addFood" #firstPlate1 placeholder="Postre Plato">
+    <input type="text" name="addFood" #firstPlate2 placeholder="Postre Plato">
+    <input type="text" name="addFood" #firstPlate3 placeholder="Postre Plato">
+
+
+    <button type="submit" (click)="addFoodDes(firstPlate1.value, firstPlate2.value, firstPlate3.value); addFoodDesForm.reset()">
+    Añadir! </button>
+  </div>
+</form>

@@ -1,3 +1,27 @@
-<p>
-  food-page works!
-</p>
+<button (click)="addFood()">
+  Añadir menú</button>
+<div class="addFoodForm invisible">
+  <app-add-food></app-add-food>
+</div>
+
+
+
+
+<div class="foodList">
+
+  <ul class="fList" *ngFor="let food of foods">
+    {{ food.primeros }}
+    <div *ngFor="let primero of food.primeros" class="listElemContainer">
+      <div class="foodTitle">
+        <h3>Primeros</h3>
+        <span> {{primero.Primer}} </span>
+        <h3>Segundos</h3>
+        <span> {{primero.Primer2}} </span>
+        <h3>Terceros</h3>
+        <span> {{primero.Primer3}} </span>
+        <h3>Postres</h3>
+        <span> {{food.Primer}} </span>
+      </div>
+    </div>
+  </ul>
+</div>

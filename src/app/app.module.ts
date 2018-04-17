@@ -24,6 +24,7 @@ import { GuestTableComponent } from './components/guest-table/guest-table.compon
 
 import { FilterPipe } from './pipes/filter.pipe';
 import { AddGiftComponent } from './components/add-gift/add-gift.component';
+import { AddFoodComponent } from './components/add-food/add-food.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCXmbIqHNnPczedMvF1opqlmAPoCDpQUiw",
@@ -49,7 +50,8 @@ firebase.initializeApp(firebaseConfig);
     WedPageComponent,
     GuestListComponent,
     GuestTableComponent,
-    AddGiftComponent
+    AddGiftComponent,
+    AddFoodComponent
   ],
   imports: [
     BrowserModule,

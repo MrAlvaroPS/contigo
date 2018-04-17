@@ -1,8 +1,11 @@
-<div>
+  
+  <form #addGiftForm>
+  <div>
     <input type="text" name="addGift" #giftName placeholder="Nombre">
     <input type="text" name="addGift" #giftPrice placeholder="Precio">
     <input type="text" name="addGift" #giftPhoto placeholder="Foto">
 
     
-    <button type="submit" (click)="addGift(giftName.value, giftPrice.value, giftPhoto.value)"> Añadir! </button>
+    <button type="submit" (click)="addGift(giftName.value, giftPrice.value, giftPhoto.value); addGiftForm.reset()"> Añadir! </button>
   </div>
+</form>
