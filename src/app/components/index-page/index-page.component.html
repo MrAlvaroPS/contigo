@@ -1,4 +1,3 @@
-
 <div class="bgImage" (click)="showdiv()">
   <div class="titleContainer">
     <h1 class="indexTitle">DO MORE
@@ -8,23 +7,33 @@
 
 <div class="inputIndexForm">
   <div class="codeInput">
-    <input class="indexInput" type="text" name="codeInput" placeholder="Código">
+      <button class="btnReg" name="indexBtn" (click)='goInvi()'>Invitado</button>
   </div>
   <!-- <div class="btnIndexReg">
       <button class="btnReg" name="indexBtn">Login</button>
     </div> -->
-    <div class="btnIndexReg">
-        <button class="btnReg" name="indexBtn" (click)='goReg(); showForm==false'>Registro</button>
-      </div>
+  <div class="btnIndexReg">
+    <button class="btnReg" name="indexBtn" (click)='goReg(); showForm==false'>Registro</button>
+  </div>
 </div>
 
-<!-- <div class="loginIndexForm">
-  <form>
-    <label for="codigo" class="codeString">
-      <strong>Código</strong>
-    </label>
-    <div class="bgImageInput">
-      <input class="protaCode">
-    </div>
-  </form>
-</div> -->
+
+<div class="loginMod">
+  <div *ngIf="!(authService.user | async)">
+    <input type="email" [(ngModel)]="email" placeholder="email" required name="email">
+    <input type="password" [(ngModel)]="password" placeholder="contraseña" required #pass>
+
+    <button (click)="signup()" [disabled]="!email || !password">
+      Signup
+    </button>
+
+    <button (click)="login()" [disabled]="!email || !password">
+      Login
+    </button>
+  </div>
+
+  <button (click)="logout()" *ngIf="authService.user | async">
+    Logout
+  </button>
+
+</div>

@@ -8,6 +8,8 @@ import { routes } from '../app/routes/app.routes/app.routes.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './services/auth.service';
 
 import { AppComponent } from './app.component';
 import { IndexPageComponent } from './components/index-page/index-page.component';
@@ -25,16 +27,9 @@ import { GuestTableComponent } from './components/guest-table/guest-table.compon
 import { FilterPipe } from './pipes/filter.pipe';
 import { AddGiftComponent } from './components/add-gift/add-gift.component';
 import { AddFoodComponent } from './components/add-food/add-food.component';
+import { environment } from './env/env/env';
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyCXmbIqHNnPczedMvF1opqlmAPoCDpQUiw",
-  authDomain: "userlist-3b.firebaseapp.com",
-  databaseURL: "https://userlist-3b.firebaseio.com",
-  projectId: "userlist-3b",
-  storageBucket: "userlist-3b.appspot.com",
-  messagingSenderId: "649269537068"
-};
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(environment);
 
 @NgModule({
   declarations: [
@@ -59,9 +54,10 @@ firebase.initializeApp(firebaseConfig);
     HttpModule,
     RouterModule.forRoot(routes),
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireAuthModule
   ],
-  providers: [AngularFireDatabase],
+  providers: [AngularFireDatabase, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

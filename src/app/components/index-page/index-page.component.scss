@@ -3,6 +3,14 @@
   src: url('./../../../others/fonts/FREEBSC_.ttf') format('truetype');
 }
 
+.loginMod {
+  z-index: 33;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
 .bgImage {
   background-image: url('http://images.glaciermedia.ca/polopoly_fs/1.2190212.1457064248!/fileImage/httpImage/image.jpg_gen/derivatives/original_size/rustic-roses.jpg'); // background-attachment: fixed;
   background-size: cover;
