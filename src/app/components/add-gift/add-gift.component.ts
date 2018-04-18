@@ -5,6 +5,8 @@ import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-add-gift',
@@ -12,11 +14,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-gift.component.scss']
 })
 export class AddGiftComponent implements OnInit {
+  email: string;
+  password: string;
+  uid: string;
+  user = this.firebaseAuth;
+
   gifts: Object[];
   constructor(
     private af: AngularFireDatabase,
     private routes: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private firebaseAuth: AngularFireAuth,
+    public authService: AuthService
   ) {
     af.list('gifts').valueChanges().subscribe(
       gifts => {
@@ -35,6 +44,7 @@ export class AddGiftComponent implements OnInit {
       Value: giftPrice,
       Photo: giftPhoto
     });
+    console.log(this.user.auth.currentUser.uid);
   }
 
 }

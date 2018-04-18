@@ -29,7 +29,16 @@ import { AddGiftComponent } from './components/add-gift/add-gift.component';
 import { AddFoodComponent } from './components/add-food/add-food.component';
 import { environment } from './env/env/env';
 
-firebase.initializeApp(environment);
+const config = {
+  apiKey: 'AIzaSyCXmbIqHNnPczedMvF1opqlmAPoCDpQUiw',
+  authDomain: 'userlist-3b.firebaseapp.com',
+  databaseURL: 'https://userlist-3b.firebaseio.com',
+  projectId: 'userlist-3b',
+  storageBucket: 'userlist-3b.appspot.com',
+  messagingSenderId: '649269537068'
+};
+
+firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
@@ -54,7 +63,7 @@ firebase.initializeApp(environment);
     HttpModule,
     RouterModule.forRoot(routes),
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireModule.initializeApp(config, 'angular-auth-firebase'),
     AngularFireAuthModule
   ],
   providers: [AngularFireDatabase, AuthService],
