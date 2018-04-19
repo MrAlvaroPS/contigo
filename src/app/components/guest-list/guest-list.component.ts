@@ -13,7 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   providers: [AngularFireDatabase]
 })
 export class GuestListComponent implements OnInit {
-  users: Object[];
+  users: Array<any>;
+
   constructor(
     private af: AngularFireDatabase,
     private routes: ActivatedRoute,

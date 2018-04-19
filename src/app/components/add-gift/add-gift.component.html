@@ -5,7 +5,9 @@
     <input type="text" name="addGift" #giftPrice placeholder="Precio">
     <input type="text" name="addGift" #giftPhoto placeholder="Foto">
 
-    
-    <button type="submit" (click)="addGift(giftName.value, giftPrice.value, giftPhoto.value); addGiftForm.reset()"> Añadir! </button>
+    <div *ngIf="user.uid == E4Q6n6h97YYFvJt6jKEQ4JjNdNM2">
+      <button type="submit" (click)="addGift(giftName.value, giftPrice.value, giftPhoto.value); addGiftForm.reset()"> Añadir! </button>
+
+    </div>
   </div>
 </form>

@@ -16,15 +16,16 @@ export class IndexPageComponent implements OnInit {
   email: string;
   password: string;
   user = this.firebaseAuth;
+  uid = this.user.auth.currentUser.uid;
 
 
   constructor(private firebaseAuth: AngularFireAuth, private router: Router, public authService: AuthService) { }
 
   ngOnInit() { }
   showdiv() {
-    console.log('showDivIndex working');
       $('.inputIndexForm').css('opacity', '1');
       $('.inputIndexForm').css('transition', 'opacity 1500ms');
+      console.log(this.user.auth.currentUser.uid);
   }
 
   goReg() {
