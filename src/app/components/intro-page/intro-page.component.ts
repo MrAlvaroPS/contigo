@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 
 @Component({
   selector: 'app-intro-page',
