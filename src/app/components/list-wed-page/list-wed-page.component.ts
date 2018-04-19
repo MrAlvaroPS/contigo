@@ -6,6 +6,8 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, Router } from '@angular/router';
 import { gifts } from '../../gifts';
+declare var jquery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-list-wed-page',
@@ -21,11 +23,30 @@ export class ListWedPageComponent implements OnInit {
     private routes: ActivatedRoute,
     private router: Router) {
       af.list('gifts').valueChanges().subscribe(
-        gifts => {
-          this.gifts = gifts;
+        gift => {
+          this.gifts = gift;
         }
       );
     }
 
   ngOnInit() { }
+
+  reserve() {
+        $('.listElemContainer').toggleClass('btnVel');
+
+        console.log (this);
+
+        if ($('.listElemContainer').hasClass('btnVel')) {
+          $('.resBtn').text('Reservado');
+          $('.resBtn').removeClass('btn-success');
+          $('.resBtn').addClass('btn-warning');
+          $('.resBtn').css('cursor', 'not-allowed');
+        } if (!$('.listElemContainer').hasClass('btnVel')) {
+          $('.resBtn').text('Reservar');
+          $('.resBtn').removeClass('btn-warning');
+          $('.resBtn').addClass('btn-success');
+          $('.resBtn').css('cursor', 'pointer');
+        }
+
+  }
 }

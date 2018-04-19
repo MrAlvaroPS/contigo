@@ -1,5 +1,7 @@
   
-  <form #addGiftForm>
+
+  <button class="addGiftBtn" (click)="showAddGift()"> <i class="fa fa-plus-circle circuloAdd" aria-hidden="true"></i></button>
+  <form #addGiftForm class="addGiftForm">
   <div>
     <input type="text" name="addGift" #giftName placeholder="Nombre">
     <input type="text" name="addGift" #giftPrice placeholder="Precio">

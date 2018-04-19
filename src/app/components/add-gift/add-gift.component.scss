@@ -1,0 +1,16 @@
+
+.addGiftBtn {
+    background-color: transparent;
+    border: 0;
+    float: right;
+    cursor: pointer;
+    .circuloAdd {
+        color: green;
+        float: right;
+        font-size: 40px;
+    }
+}
+
+.addGiftForm {
+    display: none;
+}

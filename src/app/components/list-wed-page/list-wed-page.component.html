@@ -7,17 +7,21 @@
 <div class="giftList">
 
   <ul class="conList" *ngFor="let gift of gifts">
-    <div class="listElemContainer">
+    <div class="listElemContainer" #listElem>
         <div class="giftTitle">
 
             <h2> {{gift.Name}} </h2>
+
           </div>
+
           <div>
+              <br>
               <img class="imgWed" [src]=gift.Photo> </div>
             <div class="wedGiftFoot">
               <div>
                 <strong>Price: </strong>{{gift.Value}}</div>
-                <button type="button" class="btn btn-success">Reservar</button>
+                <button type="button" class="btn btn-success resBtn" (click)="reserve()">Reservar</button>
+
             </div>
     </div>
   </ul>

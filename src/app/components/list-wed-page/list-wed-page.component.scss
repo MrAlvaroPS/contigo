@@ -1,6 +1,12 @@
 .bgImageWed {
-    padding: 0 30px;
-    // background-image: url('https://wallpapertag.com/wallpaper/full/4/9/6/218672-beautiful-vintage-rustic-wood-background-3006x1727-for-windows.jpg');
+    .conList {
+        display: inline-block;
+    }
+    .btnVel {
+        opacity: 0.4;
+        transition: opacity 1s;
+    }
+    padding: 0 30px; // background-image: url('https://wallpapertag.com/wallpaper/full/4/9/6/218672-beautiful-vintage-rustic-wood-background-3006x1727-for-windows.jpg');
     // background-repeat: repeat-y;
     // background-size: cover;
     .giftSearch {
@@ -12,51 +18,88 @@
             border-radius: 20px;
             border: none;
             outline: none;
-            -webkit-box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
-            -moz-box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
-            box-shadow: 2px 7px 43px 1px rgba(0,0,0,0.4);
+            -webkit-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+            box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
         }
-    
     }
     .fullGiftContainer {
-      display: flex;
-      flex-wrap: wrap;
-      
-      .giftsCointainer {
-        border: 1px solid papayawhip;
-        background-color: rgba(255, 250, 240, 1);
         display: flex;
-        flex-direction: column;
-        margin: 15px 10px;
-        -webkit-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
-        box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
-        justify-content: space-between;
-        .imgWed {
-            max-width: 400px;
-            max-height: 200px;
-          }
-      }
-      .giftsCointainer:nth-child(2n+1) {
-        border: 1px solid papayawhip;
-        background-color: rgba(255, 250, 240, 1);
-        display: flex;
-        flex-direction: column;
-        margin: 5px 10px;
-        -webkit-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
-        box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
-        justify-content: space-between;
-          .imgWed {
-            max-width: 300px;
-            max-height: 150px;
-          }
-      }
-      .wedGiftFoot {
-        margin: 20px;
-        display: flex;
-        justify-content: space-between;
-      }
+        flex-wrap: wrap;
+        .giftsCointainer {
+            border: 1px solid papayawhip;
+            background-color: rgba(255, 250, 240, 1);
+            display: flex;
+            flex-direction: column;
+            margin: 15px 10px;
+            -webkit-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+            box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+            justify-content: space-between;
+            .imgWed {
+                max-width: 400px;
+                max-height: 200px;
+            }
+        }
+        .giftsCointainer:nth-child(2n+1) {
+            border: 1px solid papayawhip;
+            background-color: rgba(255, 250, 240, 1);
+            display: flex;
+            flex-direction: column;
+            margin: 5px 10px;
+            -webkit-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+            -moz-box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+            box-shadow: 2px 7px 43px 1px rgba(0, 0, 0, 0.4);
+            justify-content: space-between;
+            .imgWed {
+                max-width: 300px;
+                max-height: 150px;
+            }
+        }
     }
-    
+}
+
+.conList {
+  margin: 20px;
+  padding: 0;
+  min-width: 310px;
+  margin-bottom: 30px;
+  box-shadow: 15px 15px 70px -8px;
+  border-radius: 12%;
+  padding: 1%;
+  background-color: ghostwhite;
+}
+
+.listElemContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.wedGiftFoot {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.listElemContainer {
+  text-align: center;
+}
+
+.imgWed {
+  max-width: 350px;
+  max-height: 200px;
+}
+
+.giftList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+
+.giftTitle {
+  border-bottom: 1px solid lightblue;
 }

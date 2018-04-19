@@ -16,7 +16,7 @@ export class IndexPageComponent implements OnInit {
   email: string;
   password: string;
   user = this.firebaseAuth;
-  uid = this.user.auth.currentUser.uid;
+  // uid = this.user.auth.currentUser.uid;
 
 
   constructor(private firebaseAuth: AngularFireAuth, private router: Router, public authService: AuthService) { }

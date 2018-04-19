@@ -8,6 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'app-add-gift',
   templateUrl: './add-gift.component.html',
@@ -46,5 +49,7 @@ export class AddGiftComponent implements OnInit {
     });
     console.log(this.user.auth.currentUser.uid);
   }
-
+  showAddGift() {
+    $('.addGiftForm').toggle();
+  }
 }
