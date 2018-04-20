@@ -1,0 +1,43 @@
+.imagesContainer {
+    display: inline-flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 1000px;
+    /* margin: auto; */
+    .imageIntroContainer {
+        display: inline;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        height: 100%;
+        padding: 15px;
+        border-radius: 25px;
+        /* margin: 0; */
+        /* padding: 0; */
+        margin: 0 35px;
+        .imageIntro {
+            max-width: 350px;
+            max-height: 300px;
+            border-radius: 15px;
+
+        }
+    }
+}
+
+.separation {
+    width: 80%;
+}
+
+.bodyIntro {
+    // background-image: url("https://www.bitsonline.com/wp-content/uploads/2017/12/wedding-2.jpg");
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // height: 100vh;
+    .mainCont {
+        width: 90%;
+        margin: auto;
+        border: 1px solid lightblue;
+        box-shadow: 0px 30px 60px -14px;
+        background-color: rgba(248,248,255,0.6);
+    }
+}

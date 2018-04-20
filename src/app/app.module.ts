@@ -30,6 +30,7 @@ import { AddFoodComponent } from './components/add-food/add-food.component';
 import { environment } from './env/env/env';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { DndModule } from 'ng2-dnd';
+import { ReversePipe } from './pipes/reverse.pipe';
 
 const config = {
   apiKey: 'AIzaSyCXmbIqHNnPczedMvF1opqlmAPoCDpQUiw',
@@ -57,7 +58,8 @@ firebase.initializeApp(config);
     GuestListComponent,
     GuestTableComponent,
     AddGiftComponent,
-    AddFoodComponent
+    AddFoodComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,

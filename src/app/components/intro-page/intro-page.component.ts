@@ -21,11 +21,18 @@ export class IntroPageComponent implements OnInit {
   files = [];
   images: Object[];
 
+  news: Object[];
+
   constructor(public authService: AuthService, private afStorage: AngularFireStorage,
     private af: AngularFireDatabase) {
     af.list('images').valueChanges().subscribe(
       image => {
         this.images = image;
+      }
+    );
+    af.list('news').valueChanges().subscribe(
+      news => {
+        this.news = news;
       }
     );
    }
@@ -43,6 +50,13 @@ export class IntroPageComponent implements OnInit {
 
     firebase.database().ref('images/').push({
       url: 'https://firebasestorage.googleapis.com/v0/b/userlist-3b.appspot.com/o/' + id + '?alt=media&token='
+    });
+  }
+
+  submitNew(title, body) {
+    firebase.database().ref('news/').push({
+      title: title,
+      body: body
     });
   }
 }

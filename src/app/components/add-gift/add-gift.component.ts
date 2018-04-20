@@ -23,6 +23,7 @@ export class AddGiftComponent implements OnInit {
   user = this.firebaseAuth;
 
   gifts: Object[];
+
   constructor(
     private af: AngularFireDatabase,
     private routes: ActivatedRoute,

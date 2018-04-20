@@ -1,21 +1,59 @@
+<div class="bodyIntro">
 
-asdasdasdasd
+  <div class="mainCont">
 
-<div class="progress">
-        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <div>
+        <form class="form-inline">
+      <label for="titulo">Título noticia: </label>
+      <input type="text" name="tituloNot" #titleNot class="form-inline" placeholder=" Título de la noticia">
+      <label for="noticia">Noticia: </label>
+      <input type="text" name="noticia" #not class="form-inline" required placeholder=" Noticia">
+      <button type="submit" class="btn btn-default" (click)="submitNew(titleNot.value, not.value)"> Añadir noticia </button>
+    
+      <div>
+
+        <label for="file">File:</label>
+        <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+        <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'"
+                  [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+      
+        <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+          File uploaded:
+          <a [href]="downloadSrc">{{downloadSrc}}</a>
+        </div>
+      </div>
+    </form>
     </div>
 
-<label for="file">File:</label>
-  <input type="file" (change)="upload($event)" accept=".png,.jpg" />
- 
-  <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
-        File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
-        <img [src]="downloadSrc">
-    </div>
+    <div class="row">
+      <div class="newsContainer col-2">
+        <div class="news">
+          <h4># Últimas noticias</h4>
+          <div *ngFor="let new of news | reverse">
+            <span><b>{{new.title}}</b></span>
+            <p>{{new.body}}</p>
+            <hr class="separation">
+          </div>
+        </div>
+      </div>
 
-    <div *ngFor="let image of images">
-        <img [src]="image.url + image.downloadTokens">
+
+      <div class="imagesContainer col-10">
+        <div *ngFor="let image of images" class="imageIntroContainer">
+          <img class="imageIntro" [src]="image.url + image.downloadTokens">
+        </div>
+
+      </div>
     </div>
+  </div>
+
+</div>
+
+
+
 
 <!-- <div *ngIf="user"> 
 
@@ -23,4 +61,3 @@ asdasdasdasd
 </div>
    
  -->
-
