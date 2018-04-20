@@ -34,7 +34,7 @@
             <div class="panel-body" *ngFor="let user of users">
                 <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="{Name: user.Name}">
                     <div class="panel-body">
-                        <div>{{user.Name}}</div>
+                        <div #nombre>{{user.Name}}</div>
                         <!-- <div>{{transferData | json}}</div> -->
                     </div>
                 </div>
@@ -42,6 +42,7 @@
         </div>
     </div>
     <div class="col-sm-3">
+         <img src="assets/table.png">
         <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
             <div class="panel-heading">Mesa 1 (Invitados:{{mesa1.length}})</div>
             <div class="panel-body">

@@ -23,6 +23,8 @@ export class GuestListComponent implements OnInit {
   mesa2: Array<any> = [];
   mesa3: Array<any>;
 
+  image1 = '../../images/wed.png';
+
   constructor(
     private af: AngularFireDatabase,
     private routes: ActivatedRoute,
@@ -52,11 +54,16 @@ export class GuestListComponent implements OnInit {
 
   transferDataSuccess($event: any) {
     this.mesa1.push($event);
-    console.log($event.dragData.Name);
+    console.log(this);
 
     firebase.database().ref('mesa1/').push({
       Name: $event.dragData.Name
     });
+
+    if (this.mesa1.some(e => e.Name === $event.dragData.Name)) {
+      console.log('holi');
+      console.log(this);
+    }
 }
 
   transferDataSuccess2($event: any) {
