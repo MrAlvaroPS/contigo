@@ -33,6 +33,11 @@ export class GuestListComponent implements OnInit {
         this.users = users;
       }
     );
+    af.list('mesa1').valueChanges().subscribe(
+      mesa1 => {
+        this.mesa1 = mesa1;
+      }
+    );
   }
 
   ngOnInit() {
@@ -47,7 +52,11 @@ export class GuestListComponent implements OnInit {
 
   transferDataSuccess($event: any) {
     this.mesa1.push($event);
-    console.log($event);
+    console.log($event.dragData.Name);
+
+    firebase.database().ref('mesa1/').push({
+      Name: $event.dragData.Name
+    });
 }
 
   transferDataSuccess2($event: any) {

@@ -45,7 +45,8 @@
         <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
             <div class="panel-heading">Mesa 1 (Invitados:{{mesa1.length}})</div>
             <div class="panel-body">
-                <div [hidden]="!mesa1.length > 0" *ngFor="let data of mesa1">{{data.dragData.Name}}</div>
+                <!-- <div [hidden]="!receivedData.length > 0"*ngFor="let data of mesa1">{{data.dragData.Name}}</div> -->
+                <div *ngFor="let mesa of mesa1">{{mesa.Name}}</div>
             </div>
         </div>
     </div>
