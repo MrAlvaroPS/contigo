@@ -1,13 +1,20 @@
 
+<!-- 
+      <div id="draggable" style="width: 50px; background-color: red">
+      a
+      </div>
+
 <div class="guestList">
     <input class="addInput" type="text" #user id="userInput" placeholder="User Name">
-    <button class="addBtnSubmit" (click)="add(user.value)"> Añadir un invitado </button>
+    <button class="addBtnSubmit" (click)="add(user.value)"> Añadir un invitado </button> -->
     
-    <div class="guestSearch">
+    <!-- <div class="guestSearch">
         <input type="text" name="guestSearch" placeholder="Busca un invitado" [(ngModel)]="pattern">
-      </div>
-    
-  <ul class="conList" *ngFor="let user of users | filter:'user':pattern; let i = index">
+      </div> -->
+
+
+<!--     
+  <ul class="conList" *ngFor="let user of users" >
     <div class="listElemContainer">
       <li class="list">
 
@@ -16,4 +23,38 @@
       </li>
     </div>
   </ul>
+</div> -->
+
+
+<h4>Transfer custom data in Drag-and-Drop</h4>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">Available to drag</div>
+            <div class="panel-body" *ngFor="let user of users">
+                <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="{Name: user.Name}">
+                    <div class="panel-body">
+                        <div>{{user.Name}}</div>
+                        <!-- <div>{{transferData | json}}</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
+            <div class="panel-heading">Mesa 1 (Invitados:{{mesa1.length}})</div>
+            <div class="panel-body">
+                <div [hidden]="!mesa1.length > 0" *ngFor="let data of mesa1">{{data.dragData.Name}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess2($event)">
+            <div class="panel-heading">Mesa 2 (Invitados:{{mesa2.length}})</div>
+            <div class="panel-body">
+                <div [hidden]="!mesa2.length > 0" *ngFor="let data of mesa2">{{data.dragData.Name}}</div>
+            </div>
+        </div>
+    </div>
 </div>

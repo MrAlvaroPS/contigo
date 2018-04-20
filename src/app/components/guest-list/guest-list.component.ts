@@ -6,6 +6,9 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, Router } from '@angular/router';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'app-guest-list',
   templateUrl: './guest-list.component.html',
@@ -14,6 +17,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class GuestListComponent implements OnInit {
   users: Array<any>;
+  transferData: Object[];
+  receivedData: Array<any> = [];
+  mesa1: Array<any> = [];
+  mesa2: Array<any> = [];
+  mesa3: Array<any>;
 
   constructor(
     private af: AngularFireDatabase,
@@ -36,5 +44,14 @@ export class GuestListComponent implements OnInit {
     });
     this.users.push(user);
   }
+
+  transferDataSuccess($event: any) {
+    this.mesa1.push($event);
+    console.log($event);
+}
+
+  transferDataSuccess2($event: any) {
+  this.mesa2.push($event);
+}
 
 }

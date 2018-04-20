@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabaseModule, AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { FirebaseListObservable } from 'angularfire2/database-deprecated';
+import * as firebase from 'firebase/app';
+import { storage } from 'firebase/app';
 
 @Component({
   selector: 'app-intro-page',
@@ -14,8 +18,17 @@ export class IntroPageComponent implements OnInit {
   task: AngularFireUploadTask;
   uploadProgress: Observable<number>;
   downloadURL: Observable<string>;
+  files = [];
+  images: Object[];
 
-  constructor(public authService: AuthService, private afStorage: AngularFireStorage) { }
+  constructor(public authService: AuthService, private afStorage: AngularFireStorage,
+    private af: AngularFireDatabase) {
+    af.list('images').valueChanges().subscribe(
+      image => {
+        this.images = image;
+      }
+    );
+   }
 
   ngOnInit() {
   }
@@ -26,5 +39,10 @@ export class IntroPageComponent implements OnInit {
     this.task = this.ref.put(event.target.files[0]);
     this.uploadProgress = this.task.percentageChanges();
     this.downloadURL = this.task.downloadURL();
+    console.log(this.downloadURL);
+
+    firebase.database().ref('images/').push({
+      url: 'https://firebasestorage.googleapis.com/v0/b/userlist-3b.appspot.com/o/' + id + '?alt=media&token='
+    });
   }
 }
