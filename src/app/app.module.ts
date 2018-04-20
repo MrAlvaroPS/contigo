@@ -28,6 +28,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { AddGiftComponent } from './components/add-gift/add-gift.component';
 import { AddFoodComponent } from './components/add-food/add-food.component';
 import { environment } from './env/env/env';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 const config = {
   apiKey: 'AIzaSyCXmbIqHNnPczedMvF1opqlmAPoCDpQUiw',
@@ -64,7 +65,8 @@ firebase.initializeApp(config);
     RouterModule.forRoot(routes),
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(config, 'angular-auth-firebase'),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [AngularFireDatabase, AuthService],
   bootstrap: [AppComponent]

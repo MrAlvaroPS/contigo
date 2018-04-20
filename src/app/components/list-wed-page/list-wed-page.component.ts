@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { gifts } from '../../gifts';
 declare var jquery: any;
 declare var $: any;
+
 
 @Component({
   selector: 'app-list-wed-page',
@@ -17,6 +18,8 @@ declare var $: any;
 })
 export class ListWedPageComponent implements OnInit {
   gifts: Object[];
+  $key: string;
+  giftList: AngularFireList<any>;
 
   constructor(
     private af: AngularFireDatabase,
@@ -31,21 +34,39 @@ export class ListWedPageComponent implements OnInit {
 
   ngOnInit() { }
 
-  reserve() {
-        $('.listElemContainer').toggleClass('btnVel');
+  // addGift(giftName, giftPrice, giftPhoto) {
+  //   console.log('añadiendo gift');
+  //   firebase.database().ref('gifts/').push({
+  //     Name: giftName,
+  //     Value: giftPrice,
+  //     Photo: giftPhoto
+  //   });
+  //   console.log(this.user.auth.currentUser.uid);
+  // }
 
-        console.log (this);
+  reserve(div, btn, key, uid, e) {
+    // let nombre = key;
+    // let manolo = firebase.database().ref('gifts');
+    // manolo.orderByChild('Name').equalTo(nombre).on('child_added', function(snapshot) {
+    //   firebase.database().ref('gifts/' + snapshot.key).update({
+    //     res: true
+    //   });
+    // });
 
-        if ($('.listElemContainer').hasClass('btnVel')) {
-          $('.resBtn').text('Reservado');
-          $('.resBtn').removeClass('btn-success');
-          $('.resBtn').addClass('btn-warning');
-          $('.resBtn').css('cursor', 'not-allowed');
-        } if (!$('.listElemContainer').hasClass('btnVel')) {
-          $('.resBtn').text('Reservar');
-          $('.resBtn').removeClass('btn-warning');
-          $('.resBtn').addClass('btn-success');
-          $('.resBtn').css('cursor', 'pointer');
+    // console.log(uid);
+
+
+        $(div).toggleClass('btnVel');
+        if ($(div).hasClass('btnVel')) {
+          $(btn).text('Reservado');
+          $(btn).removeClass('btn-success');
+          $(btn).addClass('btn-warning');
+          $(btn).css('cursor', 'not-allowed');
+        } if (!$(div).hasClass('btnVel')) {
+          $(btn).text('Reservar');
+          $(btn).removeClass('btn-warning');
+          $(btn).addClass('btn-success');
+          $(btn).css('cursor', 'pointer');
         }
 
   }

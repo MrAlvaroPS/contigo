@@ -1,36 +1,32 @@
 <div class="bgImageWed">
 
-<app-add-gift></app-add-gift>
+  <app-add-gift></app-add-gift>
 
 
+  <div class="giftList">
 
-<div class="giftList">
+    <ul class="conList" #listElem *ngFor="let gift of gifts">
+      <div class="listElemContainer">
+        <div class="giftTitle" #giftName>
 
-  <ul class="conList" *ngFor="let gift of gifts">
-    <div class="listElemContainer" #listElem>
-        <div class="giftTitle">
+          <h2 #key> {{gift.Name}} </h2>
 
-            <h2> {{gift.Name}} </h2>
-
-          </div>
-
+        </div>
+        <div>
+          <br>
+          <img class="imgWed" [src]=gift.Photo> </div>
+        <div class="wedGiftFoot">
           <div>
-              <br>
-              <img class="imgWed" [src]=gift.Photo> </div>
-            <div class="wedGiftFoot">
-              <div>
-                <strong>Price: </strong>{{gift.Value}}</div>
-                <button type="button" class="btn btn-success resBtn" (click)="reserve()">Reservar</button>
+            <strong>Price: </strong>{{gift.Value}}</div>
+          <button type="button" #btnRes class="btn btn-success resBtn" (click)="reserve(listElem, btnRes, gift.Name, gift.res)">Reservar</button>
 
-            </div>
-    </div>
-  </ul>
-</div>
+        </div>
+      </div>
+    </ul>
+  </div>
 
 
-
-
-<!-- 
+  <!-- 
 
   <div class="giftSearch">
     <input type="text" name="giftSearch" placeholder="Busca un regalo" [(ngModel)]="pattern">
