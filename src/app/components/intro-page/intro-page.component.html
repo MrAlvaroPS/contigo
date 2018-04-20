@@ -1,39 +1,52 @@
 <div class="bodyIntro">
 
   <div class="mainCont">
+    <button class="addGiftBtn addNew" (click)="showForm()" *ngIf="user.uid === E4Q6n6h97YYFvJt6jKEQ4JjNdNM2">
+      <i class="fa fa-plus-circle " aria-hidden="true"></i>
+    </button>
 
 
-    <div>
-        <form class="form-inline">
-      <label for="titulo">Título noticia: </label>
-      <input type="text" name="tituloNot" #titleNot class="form-inline" placeholder=" Título de la noticia">
-      <label for="noticia">Noticia: </label>
-      <input type="text" name="noticia" #not class="form-inline" required placeholder=" Noticia">
-      <button type="submit" class="btn btn-default" (click)="submitNew(titleNot.value, not.value)"> Añadir noticia </button>
-    
-      <div>
 
-        <label for="file">File:</label>
-        <input type="file" (change)="upload($event)" accept=".png,.jpg" />
-        <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'"
-                  [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-      
-        <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
-          File uploaded:
-          <a [href]="downloadSrc">{{downloadSrc}}</a>
+    <div class="formNew">
+      <form class="form-inline formi">
+        <div class="inlinia">
+          <label for="titulo">Título: </label>
+          <input type="text" name="tituloNot" #titleNot class="form-inline" placeholder=" Título de la noticia">
         </div>
-      </div>
-    </form>
+        <div class="inlinia">
+          <label for="noticia">Noticia: </label>
+          <input type="text" name="noticia" #not class="noticia" required placeholder=" Noticia">
+        </div>
+        <button type="submit" class="btn btn-success" (click)="submitNew(titleNot.value, not.value)"> Añadir </button>
+
+        <div class="inlinia">
+
+          <a href="" class="subirFoto" onclick="document.getElementById('fileID').click(); return false;">Subir foto</a>
+          <input type="file" id="fileID" (change)="upload($event)" style="display: none" accept=".png,.jpg" />
+
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'"
+              [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+
+          <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+            File uploaded:
+            <a [href]="downloadSrc">{{downloadSrc}}</a>
+          </div>
+        </div>
+      </form>
+      <hr class="separation">
     </div>
 
     <div class="row">
       <div class="newsContainer col-2">
         <div class="news">
           <h4># Últimas noticias</h4>
+          <hr class="separation">
           <div *ngFor="let new of news | reverse">
-            <span><b>{{new.title}}</b></span>
+            <div class="titleNew">
+              <b>{{new.title}}</b>
+            </div>
             <p>{{new.body}}</p>
             <hr class="separation">
           </div>
@@ -41,7 +54,7 @@
       </div>
 
 
-      <div class="imagesContainer col-10">
+      <div class="imagesContainer col-9">
         <div *ngFor="let image of images" class="imageIntroContainer">
           <img class="imageIntro" [src]="image.url + image.downloadTokens">
         </div>

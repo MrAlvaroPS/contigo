@@ -4,11 +4,8 @@
       a
       </div>
 
-<div class="guestList">
-    <input class="addInput" type="text" #user id="userInput" placeholder="User Name">
-    <button class="addBtnSubmit" (click)="add(user.value)"> Añadir un invitado </button> -->
     
-    <!-- <div class="guestSearch">
+    <! <div class="guestSearch">
         <input type="text" name="guestSearch" placeholder="Busca un invitado" [(ngModel)]="pattern">
       </div> -->
 
@@ -25,38 +22,101 @@
   </ul>
 </div> -->
 
+<button class="addGiftBtn addNew" (click)="showForm()" *ngIf="user.uid == 'E4Q6n6h97YYFvJt6jKEQ4JjNdNM2'">
+        <i class="fa fa-plus-circle " aria-hidden="true"></i>
+      </button>
+  
+<div class="addGuest">
+    <div class="addContainer">
+        <input class="addInput" type="text" #user id="userInput" placeholder="  Nombre de invitado">
+        <button class="addBtnSubmit btn btn-success" (click)="add(user.value)"> Añadir </button> 
+    </div>
+        <hr class="separation">
+    
 
-<h4>Transfer custom data in Drag-and-Drop</h4>
+    </div>
+
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-2 listado">
+        <h5>Lista de invitados</h5>
+        <hr class="separation">
         <div class="panel panel-success">
-            <div class="panel-heading">Available to drag</div>
             <div class="panel-body" *ngFor="let user of users">
                 <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="{Name: user.Name}">
                     <div class="panel-body">
-                        <div #nombre>{{user.Name}}</div>
+                        <div #nombre>{{user.Name}} <span style="float: right; color: darkred;" 
+                            (click)="removeEntrie(user.Name)" 
+                            *ngIf="user.uid == E4Q6n6h97YYFvJt6jKEQ4JjNdNM2">
+                            <i class="fas fa-times"></i>
+
+                        </span></div>
                         <!-- <div>{{transferData | json}}</div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-3">
-         <img src="assets/table.png">
+    <div class="col-sm-3 tablet">
+         <img class="tablePhoto" src="assets/table.png">
         <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
-            <div class="panel-heading">Mesa 1 (Invitados:{{mesa1.length}})</div>
+            <div class="panel-heading"><h5><b>Mesa 1 (Invitados:{{mesa1.length}})</b></h5></div>
             <div class="panel-body">
                 <!-- <div [hidden]="!receivedData.length > 0"*ngFor="let data of mesa1">{{data.dragData.Name}}</div> -->
                 <div *ngFor="let mesa of mesa1">{{mesa.Name}}</div>
             </div>
         </div>
     </div>
-    <div class="col-sm-3">
+
+    <div class="col-sm-3 tablet">
+            <img class="tablePhoto" src="assets/table.png">
         <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess2($event)">
-            <div class="panel-heading">Mesa 2 (Invitados:{{mesa2.length}})</div>
+            <div class="panel-heading"><h5><b>Mesa 2 (Invitados:{{mesa2.length}})</b></h5></div>
             <div class="panel-body">
-                <div [hidden]="!mesa2.length > 0" *ngFor="let data of mesa2">{{data.dragData.Name}}</div>
+                <div *ngFor="let mesa of mesa2">{{mesa.Name}}</div>            
             </div>
         </div>
     </div>
+
+    <div class="col-sm-3 tablet">
+            <img class="tablePhoto" src="assets/table.png">
+        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess3($event)">
+            <div class="panel-heading"><h5><b>Mesa 3 (Invitados:{{mesa3.length}})</b></h5></div>
+            <div class="panel-body">
+                    <div *ngFor="let mesa of mesa3">{{mesa.Name}}</div>   
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2 listado2">
+            
+    </div>
+    <div class="col-sm-3 tablet">
+            <img class="tablePhoto" src="assets/table.png">
+        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess4($event)">
+            <div class="panel-heading"><h5><b>Mesa 4 (Invitados:{{mesa4.length}})</b></h5></div>
+            <div class="panel-body">
+                    <div *ngFor="let mesa of mesa4">{{mesa.Name}}</div>   
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3 tablet">
+            <img class="tablePhoto" src="assets/table.png">
+        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess5($event)">
+            <div class="panel-heading"><h5><b>Mesa 5 (Invitados:{{mesa5.length}})</b></h5></div>
+            <div class="panel-body">
+                    <div *ngFor="let mesa of mesa5">{{mesa.Name}}</div>   
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3 tablet">
+            <img class="tablePhoto" src="assets/table.png">
+        <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess6($event)">
+            <div class="panel-heading"><h5><b>Mesa 6 (Invitados:{{mesa6.length}})</b></h5></div>
+            <div class="panel-body">
+                    <div *ngFor="let mesa of mesa6">{{mesa.Name}}</div>   
+            </div>
+        </div>
+    </div>
+
 </div>

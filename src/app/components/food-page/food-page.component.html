@@ -1,27 +1,52 @@
-<button (click)="addFood()">
-  Añadir menú</button>
-<div class="addFoodForm invisible">
-  <app-add-food></app-add-food>
-</div>
+<div class="mainCont">
+  <!-- <button (click)="addFood()">
+    Añadir menú</button>
+  <div class="addFoodForm">
+    <app-add-food></app-add-food>
+  </div> -->
 
 
-
-
-<div class="foodList">
-
-  <ul class="fList" *ngFor="let food of foods">
-    {{ food.primeros }}
-    <div *ngFor="let primero of food.primeros" class="listElemContainer">
+  <div class="foodList">
+    <div class="listElemContainer">
       <div class="foodTitle">
-        <h3>Primeros</h3>
-        <span> {{primero.Primer}} </span>
-        <h3>Segundos</h3>
-        <span> {{primero.Primer2}} </span>
-        <h3>Terceros</h3>
-        <span> {{primero.Primer3}} </span>
-        <h3>Postres</h3>
-        <span> {{food.Primer}} </span>
+        <div class="primeros menus">
+          <img class="entraImg" src='http://www.seeicons.com/images/iconstore/512/seeicons__57b2aae22e381.png'>
+          <h3>Entrantes</h3>
+          <span *ngFor="let primero of primeros">
+            <div> {{primero.Primer}} </div>
+            <div> {{primero.Primer2}} </div>
+            <div> {{primero.Primer3}} </div>
+          </span>
+        </div>
+        <div class="segundos menus">
+          <img class="entraImg" src="https://cdn0.iconfinder.com/data/icons/food-4-11/128/158-512.png">
+          <h3>Primeros</h3>
+          <span *ngFor="let primero of segundos">
+            <div> {{primero.Primer}} </div>
+            <div> {{primero.Primer2}} </div>
+            <div> {{primero.Primer3}} </div>
+          </span>
+        </div>
+        <div class="terceros menus">
+          <img class="entraImg" src="https://cdn4.iconfinder.com/data/icons/chef-s-kitchen/256/icon-steak-512.png">
+          <h3>Segundos</h3>
+          <span *ngFor="let primero of terceros">
+            <div> {{primero.Primer}} </div>
+            <div> {{primero.Primer2}} </div>
+            <div> {{primero.Primer3}} </div>
+          </span>
+        </div>
+        <div class="postres menus">
+          <img class="entraImg" src="http://www.myiconfinder.com/uploads/iconsets/7275aebc435153f103fe46c706a7f332-pastry.png">
+          <h3>Postres</h3>
+          <span *ngFor="let primero of postres">
+            <div> {{primero.Primer}} </div>
+            <div> {{primero.Primer2}} </div>
+            <div> {{primero.Primer3}} </div>
+          </span>
+        </div>
       </div>
     </div>
-  </ul>
+  </div>
+
 </div>

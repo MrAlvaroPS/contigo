@@ -6,7 +6,7 @@
 </div>
 
 <div class="inputIndexForm">
-  <div class="codeInput">
+  <div class="btnIndexReg">
       <button class="btnReg" name="indexBtn" (click)='goInvi()'>Invitado</button>
   </div>
   <!-- <div class="btnIndexReg">
@@ -20,14 +20,14 @@
 
 <div class="loginMod">
   <div *ngIf="!(authService.user | async)">
-    <input type="email" [(ngModel)]="email" placeholder="email" required name="email">
-    <input type="password" [(ngModel)]="password" placeholder="contraseña" required #pass>
+    <input class="inpReg shad" type="email" [(ngModel)]="email" placeholder="  email" required name="email">
+    <input class="inpReg shad" type="password" [(ngModel)]="password" placeholder="  contraseña" required #pass>
 
-    <button (click)="signup()" [disabled]="!email || !password">
+    <button class="btn shad" (click)="signup()" [disabled]="!email || !password">
       Signup
     </button>
 
-    <button (click)="login()" [disabled]="!email || !password">
+    <button class="btn shad" (click)="login()" [disabled]="!email || !password">
       Login
     </button>
   </div>

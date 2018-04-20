@@ -6,6 +6,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, Router } from '@angular/router';
 import { gifts } from '../../gifts';
+import { AngularFireAuth } from 'angularfire2/auth';
 declare var jquery: any;
 declare var $: any;
 
@@ -20,11 +21,15 @@ export class ListWedPageComponent implements OnInit {
   gifts: Object[];
   $key: string;
   giftList: AngularFireList<any>;
+  email: string;
+  password: string;
+  user = this.firebaseAuth;
 
   constructor(
     private af: AngularFireDatabase,
     private routes: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    private firebaseAuth: AngularFireAuth) {
       af.list('gifts').valueChanges().subscribe(
         gift => {
           this.gifts = gift;

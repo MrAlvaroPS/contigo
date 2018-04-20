@@ -6,6 +6,10 @@ import { AngularFireDatabaseModule, AngularFireDatabase, AngularFireList } from 
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import * as firebase from 'firebase/app';
 import { storage } from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
+
+declare var jquery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-intro-page',
@@ -20,10 +24,13 @@ export class IntroPageComponent implements OnInit {
   downloadURL: Observable<string>;
   files = [];
   images: Object[];
+  email: string;
+  password: string;
+  user = this.firebaseAuth;
 
   news: Object[];
 
-  constructor(public authService: AuthService, private afStorage: AngularFireStorage,
+  constructor(private firebaseAuth: AngularFireAuth, public authService: AuthService, private afStorage: AngularFireStorage,
     private af: AngularFireDatabase) {
     af.list('images').valueChanges().subscribe(
       image => {
@@ -58,5 +65,9 @@ export class IntroPageComponent implements OnInit {
       title: title,
       body: body
     });
+  }
+
+  showForm() {
+    $('.formNew').toggle();
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-wed-page',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wed-page.component.scss']
 })
 export class WedPageComponent implements OnInit {
+  email: string;
+  password: string;
+  user = this.firebaseAuth;
 
-  constructor() { }
+  constructor(private firebaseAuth: AngularFireAuth) { }
 
   ngOnInit() {
   }

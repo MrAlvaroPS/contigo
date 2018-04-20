@@ -4,3 +4,59 @@
     border: 1px solid black;
 }
 
+.tablet {
+    text-align: center;
+}
+
+.listado {
+    margin-left: 30px;
+    margin-top: 4%;
+    border-right: 1px solid rgba(248, 255, 255, 0.7);
+    height: 300px;
+    z-index: 1;
+}
+
+.listado2 {
+    margin-left: 30px;
+}
+
+.separation {
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: 1px solid rgba(0,0,0,.1); 
+}
+
+.addNew {
+    border: none;
+    background-color: transparent;
+    color: brown;
+    font-size: 25px;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+    outline: 0;
+    z-index: 1;
+}
+
+.addGuest {
+    display: none;
+    input {
+        border: none;
+        background-color: rgba(248, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+    label {
+        margin-right: 3px;
+    }
+}
+
+.addContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 1%;
+    margin-top: 5px;
+    input {
+        margin-right: 20px;
+    }
+}

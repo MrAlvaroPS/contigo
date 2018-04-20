@@ -9,12 +9,11 @@
         display: inline;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        height: 100%;
         padding: 15px;
         border-radius: 25px;
         /* margin: 0; */
         /* padding: 0; */
-        margin: 0 35px;
+        margin: 0 -9px;
         .imageIntro {
             max-width: 350px;
             max-height: 300px;
@@ -24,8 +23,68 @@
     }
 }
 
+.formNew {
+    display: none;
+}
+
+.addNew {
+    border: none;
+    background-color: transparent;
+    color: brown;
+    font-size: 25px;
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+    outline: 0;
+    z-index: 1;
+}
+
+.formi {
+    justify-content: flex-start;
+}
+
+.subirFoto{
+    vertical-align: middle;
+}
+
+.inlinia {
+    display: flex;
+    margin: 10px 15px 5px;
+    input {
+        border: none;
+        background-color: rgba(248, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+    label {
+        margin-right: 3px;
+    }
+}
+
+.noticia {
+    width: 600px;
+}
+
+
+.newsContainer {
+    margin-left: 10px;
+    border-right: 1px solid rgba(248, 255, 255, 0.7);
+
+    h4 {
+        text-align: center;
+        margin-top: 10px;
+    }
+    p {
+        margin-left: 6px;
+    }
+}
+.titleNew {
+    text-align: center;
+}
 .separation {
     width: 80%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: 1px solid rgba(0,0,0,.1); 
 }
 
 .bodyIntro {

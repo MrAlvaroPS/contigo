@@ -1,15 +1,16 @@
-  
 
-  <button class="addGiftBtn" (click)="showAddGift()"> <i class="fa fa-plus-circle circuloAdd" aria-hidden="true"></i></button>
-  <form #addGiftForm class="addGiftForm">
+<div class="inlinia" *ngIf="user.uid == 'E4Q6n6h97YYFvJt6jKEQ4JjNdNM2'">
+<button class="addGiftBtn" (click)="showAddGift()">
+  <i class="fa fa-plus-circle circuloAdd" aria-hidden="true"></i>
+</button>
+<form #addGiftForm class="addGiftForm">
   <div>
     <input type="text" name="addGift" #giftName placeholder="Nombre">
     <input type="text" name="addGift" #giftPrice placeholder="Precio">
     <input type="text" name="addGift" #giftPhoto placeholder="Foto">
 
-    <div *ngIf="user.uid == E4Q6n6h97YYFvJt6jKEQ4JjNdNM2">
-      <button type="submit" (click)="addGift(giftName.value, giftPrice.value, giftPhoto.value); addGiftForm.reset()"> Añadir! </button>
+      <button type="submit" class="btn btn-success" (click)="addGift(giftName.value, giftPrice.value, giftPhoto.value); addGiftForm.reset()"> Añadir! </button>
 
-    </div>
   </div>
 </form>
+</div>
